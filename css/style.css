@@ -41,11 +41,14 @@ h1{
 
 .newitem input{
   margin: 0 10px;
-  padding: 10px;
 }
 
-.newitem button{
+.newitem button,
+.newitem input{
   padding: 10px;
+  border-radius: 5px;
+  border: none;
+  border: lightgray 1px solid;
 }
 
 .todolist{
@@ -59,6 +62,7 @@ h1{
   padding: 20px;
   background-color: antiquewhite;
   border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .list-item{
@@ -78,3 +82,8 @@ h1{
   text-decoration: line-through;
 }
 
+.error-text{
+  display: block;
+  margin-top: 10px;
+  color: #ff0000;
+}

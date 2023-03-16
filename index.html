@@ -24,14 +24,15 @@
 
       <div class="newitem">
         <img src="img/arrow.png" alt="arrow">
-        <input id="add-item" type="text" placeholder="Inserisci un todo">
-        <button>Aggiungi</button>
+        <input id="add-item" type="text" placeholder="Inserisci un todo" v-model="newListItem.text" @keyup.enter ="addItem">
+        <button @click="addItem">Aggiungi</button>
+        <small class="error-text" v-show="error">Il todo inserito deve essere una parola di almeno 3 caratteri</small>
       </div>
 
       <div class="todolist">
         <ul v-if="list.length > 0">
           <li v-for="(item,index) in list" class="list-item">
-            <span class="text" :class="item.done==true?'done':''">{{item.text}}</span>
+            <span class="text" :class="item.done==true?'done':''" @click="toggleLineThrough">{{item.text}}</span>
             <i class="fa-solid fa-xmark" @click="removeItem(index)"></i>
           </li>
         </ul>

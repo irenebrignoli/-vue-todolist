@@ -24,6 +24,11 @@ const { createApp } = Vue
     data() 
     {
       return {
+        error: false,
+        newListItem: {
+          text: '',
+          done: false,
+        },
         list: [
           {
             text: 'fare ginnastica',
@@ -37,12 +42,28 @@ const { createApp } = Vue
             text: 'fare la spesa',
             done: true,
           }
-        ]
+        ],
       }
     },
     methods: {
       removeItem(index){
         this.list.splice(index,1);
+      },
+      addItem(){
+        if(this.newListItem.text.length >= 3){
+          this.list.unshift(this.newListItem);
+          this.newListItem ="";
+          this.error=false;
+        }else{
+          this.error=true;
+        }
+      },
+      toggleLineThrough(){
+        if(this.done){
+          this.classList.add("done");
+        }else{
+          this.classList.remove("done");
+        }
       }
     }
   }).mount('#app')
