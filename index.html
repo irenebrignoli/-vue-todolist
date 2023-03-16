@@ -32,7 +32,7 @@
       <div class="todolist">
         <ul v-if="list.length > 0">
           <li v-for="(item,index) in list" class="list-item">
-            <span class="text" :class="item.done==true?'done':''" @click="toggleLineThrough">{{item.text}}</span>
+            <span class="text" :class="item.done==true?'done':''">{{item.text}}</span>
             <i class="fa-solid fa-xmark" @click="removeItem(index)"></i>
           </li>
         </ul>

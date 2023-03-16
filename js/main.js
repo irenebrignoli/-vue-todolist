@@ -50,19 +50,15 @@ const { createApp } = Vue
         this.list.splice(index,1);
       },
       addItem(){
-        if(this.newListItem.text.length >= 3){
+        if(this.newListItem.text.length > 3){
           this.list.unshift(this.newListItem);
-          this.newListItem ="";
+          this.newListItem = {
+            text: '',
+            done: false,
+          };
           this.error=false;
         }else{
           this.error=true;
-        }
-      },
-      toggleLineThrough(){
-        if(this.done){
-          this.classList.add("done");
-        }else{
-          this.classList.remove("done");
         }
       }
     }
