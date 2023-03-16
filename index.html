@@ -24,8 +24,8 @@
 
       <div class="todolist">
         <ul>
-          <li class="list-item">
-            <span class="text">task1</span>
+          <li v-for="item in list" class="list-item">
+            <span class="text" :class="item.done==true?'done':''">{{item.text}}</span>
             <i class="fa-solid fa-xmark"></i>
           </li>
         </ul>

@@ -25,8 +25,16 @@ const { createApp } = Vue
       return {
         list: [
           {
-            text: 'task 1',
+            text: 'fare ginnastica',
             done: false,
+          },
+          {
+            text: 'pulire casa',
+            done: false,
+          },
+          {
+            text: 'fare la spesa',
+            done: true,
           }
         ]
       }
