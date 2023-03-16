@@ -22,13 +22,20 @@
       </div>
       <h1>My todo list</h1>
 
+      <div class="newitem">
+        <img src="img/arrow.png" alt="arrow">
+        <input id="add-item" type="text" placeholder="Inserisci un todo">
+        <button>Aggiungi</button>
+      </div>
+
       <div class="todolist">
-        <ul>
-          <li v-for="item in list" class="list-item">
+        <ul v-if="list.length > 0">
+          <li v-for="(item,index) in list" class="list-item">
             <span class="text" :class="item.done==true?'done':''">{{item.text}}</span>
-            <i class="fa-solid fa-xmark"></i>
+            <i class="fa-solid fa-xmark" @click="removeItem(index)"></i>
           </li>
         </ul>
+        <h3 v-else>Non hai todo in sospeso!</h3>
       </div>
     </div>
     

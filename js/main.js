@@ -21,7 +21,8 @@ Bonus:
 const { createApp } = Vue
 
   createApp({
-    data() {
+    data() 
+    {
       return {
         list: [
           {
@@ -37,6 +38,11 @@ const { createApp } = Vue
             done: true,
           }
         ]
+      }
+    },
+    methods: {
+      removeItem(index){
+        this.list.splice(index,1);
       }
     }
   }).mount('#app')

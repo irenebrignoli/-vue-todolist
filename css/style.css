@@ -31,17 +31,34 @@ h1{
   margin-bottom: 50px;
 }
 
+.newitem{
+  margin-bottom: 30px;
+}
+
+.newitem img{
+  width: 20px;
+}
+
+.newitem input{
+  margin: 0 10px;
+  padding: 10px;
+}
+
+.newitem button{
+  padding: 10px;
+}
+
 .todolist{
   margin: auto;
   width: 500px;
   height: auto;
-  background-color: antiquewhite;
-  border-radius: 10px;
 }
 
 .todolist ul{
   list-style: none;
   padding: 20px;
+  background-color: antiquewhite;
+  border-radius: 10px;
 }
 
 .list-item{
