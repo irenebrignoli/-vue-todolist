@@ -23,7 +23,12 @@ const { createApp } = Vue
   createApp({
     data() {
       return {
-        message: 'Hello Vue!'
+        list: [
+          {
+            text: 'task 1',
+            done: false,
+          }
+        ]
       }
     }
   }).mount('#app')
